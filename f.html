@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            /* background-color: skyblue; */
+            display: flex;
+            margin-left: 40px;
+
+        }
+        input{
+            font-size: 40px;
+            border-radius: 20px;
+            width: 300px;
+        }
+        label{
+            font-size: 40px;
+        }
+        body{
+            background: url('https://wallpaperaccess.com/full/3518775.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        p{
+            margin-left: 40px;
+            font-size: 40px;
+            margin-right: 200px;
+            font-weight:bold;
+
+        }
+        nav{
+            /* margin-top: 1%; */
+            margin-left: 320px;
+        }
+        button{
+            background-color: rgba(255, 245, 245, 0.24);
+            /* color: aqua; */
+            border: none;
+            font-weight: bold;
+            font-family: 'Times New Roman';
+            border-radius: 7px;
+            font-size: 20px;
+        }
+        a{
+  font-size: 30px;
+  text-decoration: none;
+  /* text-align: left; */
+  }
+    </style>
+</head>
+<body>
+    <a href="index.html">🔙</a>
+    <div>
+        <label for="fahrenheit" style="font-weight: bold;">Fahrenheit →</label>
+        <input type="number" id="A">
+   </div>
+    <br>
+    <p id="output">Celsius → </p>
+    <br>
+    <nav>
+    <button onclick="convert()">Convert</button>
+    </nav>
+    <script>
+        function convert(){
+        var a=parseFloat(document.getElementById("A").value);
+        var b=((a-32)*(5/9));
+        document.getElementById("output").innerText=`Celsius ➡️ ${b}`;
+        }
+    </script>
+
+</body>
+</html>

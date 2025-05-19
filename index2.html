@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        background-image: url('https://wallpapercave.com/wp/wp2497498.jpg');
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+    .box{
+        background-color: rgba(255, 255, 255, 0.2);
+        width: fit-content;
+        border-radius: 4px;
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: none;
+        width: 300px;
+        height: 250px;
+        padding-top: 1%;
+        padding-bottom: 17px; 
+        text-align: center;
+        font-size: 30px;
+        border-radius: 7px;
+    }
+    button{
+        margin: 10px;
+        margin-right: 10px;
+        color: black;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 7px;
+        border: none;
+        box-shadow: none;
+        text-shadow: none;
+        width: fit-content;
+        font-size: 40px;
+    }
+    h3{
+        margin-top: 0%;
+        font-size: 40px;
+    }
+    h5{
+        font-size: 25px;
+        margin-top: 3%;
+    }
+    a{
+  font-size: 30px;
+  text-decoration: none;
+}
+</style>
+<body>
+    <h3>CACULATOR</h3>
+    <h5 id="result">Enter the Number :</h5>
+    <!-- <input type="Number" id="result" placeholder="Enter the Number"> -->
+    <div class="box">
+        <!-- <input type="Number" id="result" placeholder="Enter the Number"> -->
+        <button id="1" onclick="one(1)">1</button>
+        <button id="2" onclick="one(2)">2</button>
+        <button id="3" onclick="one(3)">3</button>
+        <button id="Clear1" onclick="clearR()">C</button>
+        <br/>
+        <button id="4" onclick="one(4)">4</button>
+        <button id="5" onclick="one(5)">5</button>
+        <button id="6" onclick="one(6)">6</button>
+        <button id="add1" onclick="add()"> +</button>
+        <br/>
+        <button id="7" onclick="one(7)">7</button>
+        <button id="8" onclick="one(8)">8</button>
+        <button id="9" onclick="one(9)">9</button>
+        <button id="sub1" onclick="sub()">-</button>
+        <br/>
+        <button id="div1" onclick="div()">/</button>
+        <button id="0" onclick="one(0)">0</button>
+        <button id="mul1" onclick="mul()">*</button>
+        <button id="Ans1" onclick="Ans()">=</button>    
+    </div>
+    <a href="index.html">🔙</a>
+</body>
+<script>
+    var i=0;
+    var a=0;
+    var b="";
+    var op="";
+    function one(e)
+    {
+        b+=e.toString();
+        document.getElementById('result').innerHTML=b;
+
+    }
+    function add()
+    {
+        a=parseFloat(b);
+        b="";
+        op='+';
+        document.getElementById('result').innerHTML='+';
+    }
+    function sub()
+    {
+        a=parseFloat(b);
+        b="";
+        op='-';
+        document.getElementById('result').innerHTML='-';
+    }
+    function mul()
+    {
+        a=parseFloat(b);
+        b="";
+        op='*';
+        document.getElementById('result').innerHTML='*';
+    }
+    function div()
+    {
+        a=parseFloat(b);
+        b="";
+        op='/';
+        document.getElementById('result').innerHTML='/';
+    }
+    function clearR()
+    {
+        a=0;
+        b="";
+        op="";
+        // document.getElementById('result1').innerHTML="-";
+        document.getElementById('result').innerHTML="";
+    }
+    function Ans() 
+    {
+    var result;
+    var num=parseFloat(b);
+    if (op==="+")result=a+num;
+    else if(op==="-")result=a-num;
+    else if(op==="*")result=a*num;
+    else if(op==="/")result=num!==0?a/num:"Error";
+    else result = "Invalid";
+    document.getElementById('result').innerHTML=result;
+    b=result.toString(); 
+    }
+</script>
+</html>
